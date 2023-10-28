@@ -187,8 +187,8 @@ def parse_line(line: str) -> tuple[str, str, float]:
         unit_factor = UNIT_TO_SIZE[unit]
         value = float(size[:-1])
     else:
-        unit_factor = 1
-        value = float(size) * 1024  # TODO: extract du block size
+        unit_factor = 1024  # TODO: extract du block size
+        value = float(size)
 
     filesize = value * unit_factor
     return size, item, filesize
